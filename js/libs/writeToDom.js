@@ -13,7 +13,7 @@ export default function writeToDOM(
       ischecked = 'checked';
     }
 
-    domElementIAmGoingToPutHTMLInto.innerHTML += `<li>
+    domElementIAmGoingToPutHTMLInto.innerHTML += `<li class="${ischecked}">
 					<span>${groceryItem.name}</span>
 					<input ${ischecked} type="checkbox" class="checkbox" data-id=${groceryItem.id}>
 				</li>`;
@@ -36,10 +36,13 @@ export default function writeToDOM(
         theArrayIAmGoingToCreateHTMLFrom[indexOfItem].checked = '';
       } else {
         theArrayIAmGoingToCreateHTMLFrom[indexOfItem].checked = 'checked';
-        // document.querySelector('.checked').classList.add('checked');
       }
 
       saveToLocalStorage('groceryArrayKey', theArrayIAmGoingToCreateHTMLFrom);
+      writeToDOM(
+        domElementIAmGoingToPutHTMLInto,
+        theArrayIAmGoingToCreateHTMLFrom
+      );
     };
   });
 }
