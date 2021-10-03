@@ -47,6 +47,15 @@ input[type='checkbox'] {
   float: right;
 }
 
+.clearBtn {
+  height: 40px;
+  width: 200px;
+  border: none;
+  padding: 0 18px;
+  background-color: red;
+  font-weight: bold;
+}
+
 .checked {
-  background-color: hotpink;
+  background-color: #00ff0d;
 }
